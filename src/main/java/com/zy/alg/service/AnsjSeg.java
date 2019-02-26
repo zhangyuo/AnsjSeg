@@ -16,7 +16,7 @@ public interface AnsjSeg {
 
     /**
      * @param query
-     * @param typescene 1.精准分词-不去重;2.索引分词
+     * @param typescene 1.精准分词-不去重;2.精准分词-去重;3.索引分词
      * @param forests   用户自定义词典
      * @return
      */

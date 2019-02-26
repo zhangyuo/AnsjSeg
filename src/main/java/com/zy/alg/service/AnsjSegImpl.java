@@ -109,6 +109,18 @@ public class AnsjSegImpl implements AnsjSeg {
         if (typescene.equals("1")) {
             terms = ToAnalysis.parse(query, forests);
         } else if (typescene.equals("2")) {
+            Result terms1 = ToAnalysis.parse(query, forests);
+            Set<String> hadWords = new HashSet<String>();
+            List<Term> terms2 = new ArrayList<Term>();
+            for (Term term : terms1) {
+                String word = term.getName();
+                if (!hadWords.contains(word)) {
+                    terms2.add(term);
+                }
+                hadWords.add(word);
+            }
+            terms = new Result(terms2);
+        } else if (typescene.equals("3")) {
             terms = IndexAnalysis.parse(query, forests);
         }
         return terms;
