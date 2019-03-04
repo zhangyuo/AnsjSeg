@@ -8,6 +8,8 @@ import org.nlpcn.commons.lang.tire.library.Library;
 
 import java.io.*;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -126,5 +128,20 @@ public class LoadDic {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 插入用户自定义词典
+     *
+     * @param dic
+     * @param words
+     */
+    public static void insertUserDefineDic1(Forest dic, List<Value> words) {
+        Iterator var2 = words.iterator();
+        while (var2.hasNext()) {
+            Value v = (Value) var2.next();
+            Library.insertWord(dic, v);
+        }
+
     }
 }

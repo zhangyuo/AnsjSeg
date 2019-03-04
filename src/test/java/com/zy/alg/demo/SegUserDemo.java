@@ -7,7 +7,6 @@ import com.zy.alg.service.AnsjSegImpl;
 import com.zy.alg.util.LoadDic;
 import org.nlpcn.commons.lang.tire.domain.Forest;
 
-import java.io.File;
 import java.io.IOException;
 
 /**
